@@ -123,7 +123,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
-                      src="/images/estero-corriendo.jpg"
+                      src="/images/3.jpg"
                       alt="Lote B"
                       fill
                       className="object-cover"
@@ -149,7 +149,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
-                      src="/images/bosque-nativo.jpg"
+                      src="/images/1.jpg"
                       alt="Lote C"
                       fill
                       className="object-cover"
@@ -159,7 +159,7 @@ export default function Home() {
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <h3 className="font-bold text-lg">Lote 14</h3>
-                        <p className="text-sm text-gray-600">80% bosque nativo protegido</p>
+                        <p className="text-sm text-gray-600">Bosque nativo </p>
                       </div>
                       <span className="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">
                         PRECIO
