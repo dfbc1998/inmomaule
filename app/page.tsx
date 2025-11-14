@@ -11,6 +11,12 @@ export default function Home() {
     lote: '',
   });
 
+  // Validación del formulario
+  const isFormValid = formData.nombre.trim() !== '' &&
+    formData.telefono.trim() !== '' &&
+    formData.presupuesto !== '' &&
+    formData.lote !== '';
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -43,12 +49,12 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/5.jpg"
-            alt="Parcelas Los Laureles"
+            alt="Parcelas en Longaví - InmoMaule"
             fill
-            className="object-cover"
+            className="object-cover brightness-75"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60" />
         </div>
 
         {/* Logo */}
@@ -58,24 +64,24 @@ export default function Home() {
             alt="InmoMaule"
             width={180}
             height={60}
-            className="drop-shadow-lg"
+            className="drop-shadow-2xl"
           />
         </div>
 
         {/* Badge Urgencia */}
-        <div className="absolute top-6 right-6 z-20 bg-urgencia text-white px-4 py-2 rounded-full font-bold text-sm animate-pulse">
+        <div className="absolute top-6 right-6 z-20 bg-urgencia text-white px-4 py-2 rounded-full font-bold text-sm shadow-2xl animate-pulse">
           ⚠️ SOLO 3/14 LOTES
         </div>
 
         {/* Contenido Hero */}
         <div className="relative z-10 text-center px-4 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 font-display">
-            Los Laureles - Santuario Natural
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 font-display drop-shadow-2xl">
+            Tu Refugio en la Precordillera
           </h1>
-          <p className="text-xl md:text-2xl text-white/95 mb-6">
+          <p className="text-xl md:text-2xl text-white mb-6 drop-shadow-lg">
             5.000m² • Estero Natural • Financiamiento 24 meses
           </p>
-          <p className="text-3xl font-bold text-inmo-dorado mb-4">
+          <p className="text-3xl font-bold text-yellow-400 mb-4 drop-shadow-lg">
             Desde $18.000.000
           </p>
         </div>
@@ -98,7 +104,7 @@ export default function Home() {
                   <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
                       src="/images/4.jpg"
-                      alt="Lote A"
+                      alt="Lote 4"
                       fill
                       className="object-cover"
                     />
@@ -124,7 +130,7 @@ export default function Home() {
                   <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
                       src="/images/3.jpg"
-                      alt="Lote B"
+                      alt="Lote 5"
                       fill
                       className="object-cover"
                     />
@@ -150,7 +156,7 @@ export default function Home() {
                   <div className="relative w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
                       src="/images/1.jpg"
-                      alt="Lote C"
+                      alt="Lote 14"
                       fill
                       className="object-cover"
                     />
@@ -159,10 +165,10 @@ export default function Home() {
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <h3 className="font-bold text-lg">Lote 14</h3>
-                        <p className="text-sm text-gray-600">Bosque nativo </p>
+                        <p className="text-sm text-gray-600">Bosque nativo</p>
                       </div>
                       <span className="bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">
-                        PRECIO
+                        MEJOR PRECIO
                       </span>
                     </div>
                     <p className="text-2xl font-bold text-inmo-verde">$18M</p>
@@ -202,7 +208,7 @@ export default function Home() {
                     placeholder="Tu nombre completo"
                     value={formData.nombre}
                     onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none transition-colors"
                     required
                   />
                 </div>
@@ -213,7 +219,7 @@ export default function Home() {
                     placeholder="WhatsApp: +56 9 XXXX XXXX"
                     value={formData.telefono}
                     onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none transition-colors"
                     required
                   />
                 </div>
@@ -222,7 +228,7 @@ export default function Home() {
                   <select
                     value={formData.presupuesto}
                     onChange={(e) => setFormData({ ...formData, presupuesto: e.target.value })}
-                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none transition-colors"
                     required
                   >
                     <option value="">¿Cuál es tu presupuesto?</option>
@@ -236,23 +242,27 @@ export default function Home() {
                   <select
                     value={formData.lote}
                     onChange={(e) => setFormData({ ...formData, lote: e.target.value })}
-                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none"
+                    className="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-inmo-dorado focus:outline-none transition-colors"
                     required
                   >
                     <option value="">¿Qué lote te interesa?</option>
-                    <option value="Lote A">Lote 4 ($25M)</option>
-                    <option value="Lote B">Lote 5 ($25M)</option>
-                    <option value="Lote C">Lote 14 ($18M)</option>
+                    <option value="Lote 4">Lote 4 ($25M)</option>
+                    <option value="Lote 5">Lote 5 ($25M)</option>
+                    <option value="Lote 14">Lote 14 ($18M)</option>
                     <option value="Todos">Quiero ver los 3</option>
                   </select>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-inmo-verde hover:bg-inmo-verde/90 text-white py-4 rounded-lg font-bold text-lg transition-colors flex items-center justify-center gap-2"
+                  disabled={!isFormValid}
+                  className={`w-full py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 ${isFormValid
+                      ? 'bg-inmo-verde hover:bg-inmo-verde/90 text-white cursor-pointer shadow-lg hover:shadow-xl transform hover:scale-[1.02]'
+                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    }`}
                 >
-                  <span>AGENDAR VISITA</span>
-                  <span>→</span>
+                  <span>{isFormValid ? 'AGENDAR VISITA' : 'COMPLETA EL FORMULARIO'}</span>
+                  {isFormValid && <span>→</span>}
                 </button>
 
                 <p className="text-xs text-center text-gray-500">
@@ -263,7 +273,7 @@ export default function Home() {
               {/* WhatsApp Directo */}
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <a
-                  href="https://wa.me/56936979712?text=Hola,%20vi%20las%20parcelas%20Los%20Laureles"
+                  href="https://wa.me/56936979712?text=Hola,%20vi%20las%20parcelas%20en%20Longaví"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-[#25D366] hover:bg-[#20BA5A] text-white py-3 rounded-lg font-semibold text-center transition-colors"
@@ -280,7 +290,7 @@ export default function Home() {
       <footer className="bg-inmo-verde text-white py-6 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-sm opacity-80">
-            InmoMaule • Parcelas Los Laureles, Longaví • Región del Maule
+            InmoMaule • Parcelas en Longaví • Región del Maule
           </p>
         </div>
       </footer>

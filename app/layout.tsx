@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
 
 export const metadata = {
-  title: 'Parcelas Los Laureles | InmoMaule - Solo 3 Lotes Disponibles',
-  description: 'Últimas 3 parcelas de 5.000m² en Santuario Natural Los Laureles, Longaví. Bosque nativo, estero natural, río Achibueno. Desde $18M con financiamiento.',
+  title: 'Parcelas en Longaví | InmoMaule - Solo 3 Lotes Disponibles',
+  description: 'Últimas 3 parcelas de 5.000m² en santuario natural en Longaví. Bosque nativo, estero natural, río Achibueno. Desde $18M con financiamiento hasta 24 meses.',
   openGraph: {
     title: 'Tu Refugio en la Precordillera - InmoMaule',
-    description: 'Solo 3 lotes disponibles de 14 originales. 5.000m² de naturaleza pura en Los Laureles.',
+    description: 'Solo 3 lotes disponibles de 14 originales. 5.000m² de naturaleza pura en Longaví.',
     images: ['/og-image.jpg'],
     type: 'website',
   },
