@@ -46,12 +46,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--verde-bosque);
+  background: var(--inmo-verde);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--verde-claro);
+  background: #2D5F4E;
 }
 
 /* Remove number input arrows */

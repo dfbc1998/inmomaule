@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'verde-bosque': '#2D5016',
-        'verde-claro': '#52854C',
-        'tierra': '#8B4513',
-        'agua': '#4A90A4',
+        'inmo-verde': '#1B4D3E',
+        'inmo-verde-claro': '#2D5F4E',
+        'inmo-dorado': '#C9A961',
+        'inmo-dorado-claro': '#D4B876',
         'urgencia': '#D32F2F',
       },
       fontFamily: {
