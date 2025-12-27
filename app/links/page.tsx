@@ -9,8 +9,7 @@ interface LinkItem {
     descripcion: string;
     icono: string;
     url: string;
-    badge?: string;
-    badgeColor?: string;
+    esWhatsApp?: boolean;
     destacado?: boolean;
 }
 
@@ -19,53 +18,28 @@ export default function Linktree() {
 
     const links: LinkItem[] = [
         {
-            id: 'proyecto-original',
-            titulo: 'Parcelas Precordillera de Longaví',
-            descripcion: 'Solo 2 lotes disponibles • 5.000m² • Desde $18M',
+            id: 'ver-parcelas',
+            titulo: '¿Quieres conocer las parcelas?',
+            descripcion: 'Explora nuestros proyectos disponibles',
             icono: '🏞️',
-            url: 'https://inmomaule.vercel.app',
-            badge: '2 DISPONIBLES',
-            badgeColor: 'bg-urgencia',
+            url: 'https://inmomaule.com',
             destacado: true,
         },
         {
-            id: 'proyecto-nuevo-1',
-            titulo: 'Nuevo Proyecto Precordillera de Longaví',
-            descripcion: '14 parcelas • Precordillera de Longaví • Preventa',
-            icono: '🌲',
-            url: 'https://wa.me/56936979712?text=Hola,%20me%20interesa%20el%20nuevo%20proyecto%20Los%20Laureles%20II%20(14%20parcelas)',
-            badge: 'PREVENTA',
-            badgeColor: 'bg-inmo-dorado',
+            id: 'comprar-propiedad',
+            titulo: '¿Quieres vender tu propiedad?',
+            descripcion: 'Compramos tu terreno al contado',
+            icono: '💵',
+            url: 'https://wa.me/56936979712?text=Hola,%20quiero%20vender%20mi%20propiedad,%20¿la%20compran%20ustedes?',
+            esWhatsApp: true,
         },
         {
-            id: 'proyecto-nuevo-2',
-            titulo: 'Proyecto Esperanza',
-            descripcion: '7 parcelas premium • Longaví',
-            icono: '🏔️',
-            url: 'https://wa.me/56936979712?text=Hola,%20me%20interesa%20el%20proyecto%20Ribera%20del%20Achibueno%20(7%20parcelas)',
-            badge: 'PROXIMAMENTE',
-            badgeColor: 'bg-green-600',
-        },
-        {
-            id: 'whatsapp',
-            titulo: 'Contacto Directo WhatsApp',
-            descripcion: 'Asesoría personalizada y visitas programadas',
+            id: 'consulta',
+            titulo: 'Haz tu consulta',
+            descripcion: 'Contáctanos por WhatsApp',
             icono: '💬',
-            url: 'https://wa.me/56936979712?text=Hola,%20quiero%20información%20sobre%20las%20parcelas',
-        },
-        {
-            id: 'instagram',
-            titulo: 'Síguenos en Instagram',
-            descripcion: '@inmomaule • Fotos y videos de nuestros proyectos',
-            icono: '📸',
-            url: 'https://instagram.com/inmomaule',
-        },
-        {
-            id: 'financiamiento',
-            titulo: 'Opciones de Financiamiento',
-            descripcion: 'Hasta 24 meses sin interés',
-            icono: '💰',
-            url: 'https://wa.me/56936979712?text=Hola,%20quiero%20información%20sobre%20financiamiento',
+            url: 'https://wa.me/56936979712?text=Hola,%20tengo%20una%20consulta',
+            esWhatsApp: true,
         },
     ];
 
@@ -138,26 +112,17 @@ export default function Linktree() {
                             className={`bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-[1.02] overflow-hidden ${link.destacado ? 'ring-2 ring-inmo-dorado' : ''
                                 }`}
                         >
-                            <div className="p-5">
-                                <div className="flex items-start gap-4">
+                            <div className="p-6">
+                                <div className="flex items-center gap-4">
                                     {/* Icono */}
                                     <div className="text-5xl flex-shrink-0">{link.icono}</div>
 
                                     {/* Contenido */}
                                     <div className="flex-1 min-w-0">
-                                        <div className="flex items-start justify-between gap-2 mb-1">
-                                            <h3 className="font-bold text-lg text-inmo-verde leading-tight">
-                                                {link.titulo}
-                                            </h3>
-                                            {link.badge && (
-                                                <span
-                                                    className={`${link.badgeColor} text-white text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap flex-shrink-0`}
-                                                >
-                                                    {link.badge}
-                                                </span>
-                                            )}
-                                        </div>
-                                        <p className="text-sm text-gray-600 mb-3">
+                                        <h3 className="font-bold text-xl text-inmo-verde leading-tight mb-2">
+                                            {link.titulo}
+                                        </h3>
+                                        <p className="text-sm text-gray-600 mb-4">
                                             {link.descripcion}
                                         </p>
 
@@ -168,9 +133,14 @@ export default function Linktree() {
                                                     e.stopPropagation();
                                                     handleLinkClick(link);
                                                 }}
-                                                className="flex-1 bg-inmo-verde hover:bg-inmo-verde-claro text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors flex items-center justify-center gap-2"
+                                                className={`flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-colors flex items-center justify-center gap-2 ${link.esWhatsApp
+                                                    ? 'bg-[#25D366] hover:bg-[#20BA5A] text-white'
+                                                    : 'bg-inmo-verde hover:bg-inmo-verde-claro text-white'
+                                                    }`}
                                             >
-                                                <span>Visitar</span>
+                                                <span>
+                                                    {link.esWhatsApp ? 'Abrir WhatsApp' : 'Visitar Página'}
+                                                </span>
                                                 <svg
                                                     className="w-4 h-4"
                                                     fill="none"
@@ -187,7 +157,7 @@ export default function Linktree() {
                                             </button>
                                             <button
                                                 onClick={(e) => handleCopyLink(link, e)}
-                                                className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-lg transition-colors"
+                                                className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-lg transition-colors"
                                                 title="Copiar enlace"
                                             >
                                                 {copiedLink === link.id ? (

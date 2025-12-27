@@ -10,7 +10,7 @@ const lotesLosLaureles = [
     nombre: 'Lote 4',
     precio: '$25M',
     precioNumerico: 25000000,
-    imagen: '/images/4.jpg',
+    imagen: 'https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/4_baetiv.jpg',
     descripcion: 'Colinda con estero natural',
     badge: 'DISPONIBLE',
     badgeColor: 'bg-green-600 text-white',
@@ -23,7 +23,7 @@ const lotesLosLaureles = [
     nombre: 'Lote 5',
     precio: '$25M',
     precioNumerico: 25000000,
-    imagen: '/images/3.jpg',
+    imagen: 'https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/3_b0lr8m.jpg',
     descripcion: 'Colinda con estero natural',
     badge: 'VENDIDO',
     badgeColor: 'bg-gray-400 text-white',
@@ -36,7 +36,7 @@ const lotesLosLaureles = [
     nombre: 'Lote 14',
     precio: '$18M',
     precioNumerico: 18000000,
-    imagen: '/images/1.jpg',
+    imagen: 'https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/1_ihvtkd.jpg',
     descripcion: 'Bosque nativo',
     badge: 'DISPONIBLE',
     badgeColor: 'bg-green-600 text-white',
@@ -54,7 +54,7 @@ const proyectosNuevos = [
     parcelas: 14,
     tamaño: '5.000m²',
     desde: '$20M',
-    imagen: '/images/5.jpg',
+    imagen: 'https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/5_fxbwes.jpg',
     caracteristicas: ['Bosque nativo', 'Acceso consolidado', 'Cerca del estero'],
     estado: 'Preventa',
     mensaje: 'Hola, me interesa el nuevo proyecto Los Laureles II (14 parcelas de 5.000m²). ¿Pueden darme más información?',
@@ -66,7 +66,7 @@ const proyectosNuevos = [
     parcelas: 7,
     tamaño: '5.000m²',
     desde: 'Consultar',
-    imagen: '/images/2.jpg',
+    imagen: 'https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/2_gfmvsw.jpg',
     caracteristicas: ['Factibilidad de Luz', 'Ubicación privilegiada', 'Entorno natural'],
     estado: 'Próximamente',
     mensaje: 'Hola, me interesa el proyecto Ribera del Achibueno (7 parcelas). ¿Pueden darme más información?',
@@ -135,7 +135,7 @@ export default function Home() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/5.jpg"
+            src="https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/5_fxbwes.jpg"
             alt="Parcelas en Longaví - InmoMaule"
             fill
             className="object-cover brightness-75"
@@ -146,7 +146,7 @@ export default function Home() {
 
         <div className="absolute top-6 left-6 z-20">
           <Image
-            src="/images/logo.webp"
+            src="https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/logo_rjmpio.webp"
             alt="InmoMaule"
             width={180}
             height={60}
