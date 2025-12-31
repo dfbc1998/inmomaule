@@ -70,7 +70,7 @@ export default function Linktree() {
                 <div className="max-w-2xl mx-auto px-4 text-center">
                     <div className="flex justify-center mb-4">
                         <Image
-                            src="/images/logo.webp"
+                            src="https://res.cloudinary.com/dqpb96mh8/image/upload/v1766788930/logo_rjmpio.webp"
                             alt="InmoMaule"
                             width={200}
                             height={67}
